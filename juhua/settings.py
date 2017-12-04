@@ -15,9 +15,6 @@ SPIDER_MODULES = ['juhua.spiders']
 NEWSPIDER_MODULE = 'juhua.spiders'
 
 
-# Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'juhua (+http://www.yourdomain.com)'
-
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
@@ -44,16 +41,12 @@ CONCURRENT_REQUESTS = 128
 #   'Accept-Language': 'en',
 #}
 
-# Enable or disable spider middlewares
-# See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'juhua.middlewares.JuhuaSpiderMiddleware': 543,
-#}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   'juhua.middlewares.RandomUserAgent': 543,
+    'juhua.middlewares.RandomUserAgent': 100,
+    'juhua.middlewares.JsPageMiddleware': 543,
 }
 
 # Enable or disable extensions
@@ -65,7 +58,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'juhua.pipelines.ProductPipeline': 1,
+    'juhua.pipelines.ProductPipeline': 543,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -89,6 +82,9 @@ ITEM_PIPELINES = {
 # HTTPCACHE_IGNORE_HTTP_CODES = []
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
+SPIDER_MIDDLEWARES = {
+    'juhua.middlewares.JsPageMiddleware': 100,
+}
 USER_AGENTS = [
     "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; AcooBrowser; .NET CLR 1.1.4322; .NET CLR 2.0.50727)",
     "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; Acoo Browser; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.04506)",

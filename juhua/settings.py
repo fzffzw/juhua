@@ -58,7 +58,8 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'juhua.pipelines.ProductPipeline': 543,
+    # 'juhua.pipelines.ProductPipeline': 543,
+    'juhua.pipelines.ProductInfoPipeline': 543,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

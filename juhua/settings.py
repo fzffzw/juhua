@@ -106,8 +106,8 @@ USER_AGENTS = [
 ]
 
 # 数据库的配置，请将下面的换成你自己的数据库配置
-DB_HOST = 'localhost'  # 主机名
+DB_HOST = '123.207.14.144'  # 主机名
 DB_PORT = 3306  # 端口号
 DB_USER = 'root'    # 用户名
-DB_PASSWD = '123456'  # 密码
+DB_PASSWD = 'myroot!!!'  # 密码
 DB_DB = 'juhua'  # 数据库名
